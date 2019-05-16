@@ -22,26 +22,50 @@
 /////*33*/
 
 verify.completions(
-    { marker: ["1", "2", "3"], includes: { name: "f", text: "function f(): void" }, excludes: ["n", "I"] },
+    {
+        marker: ["1", "2", "3"],
+        includes: {
+            name: "f",
+            text: "function f(): void",
+            sortText: completion.SortText.CurrentFileScope
+        },
+        excludes: ["n", "I"]
+    },
     {
         marker: "11",
         includes: [
-            { name: "f2", text: "function f2(): void" },
-            { name: "n2", text: "namespace n2" },
-            { name: "I2", text: "class I2" },
+            {
+                name: "f2",
+                text: "function f2(): void",
+                sortText: completion.SortText.CurrentFileScope
+            },
+            {
+                name: "n2",
+                text: "namespace n2",
+                sortText: completion.SortText.CurrentFileScope
+            },
+            { name: "I2", text: "class I2", },
         ],
     },
     {
         marker: "22",
         includes: [
-            { name: "f2", text: "function f2(): void" },
+            {
+                name: "f2",
+                text: "function f2(): void",
+                sortText: completion.SortText.CurrentFileScope
+            },
             { name: "n2", text: "namespace n2" },
         ],
         excludes: "I2",
     },
     {
         marker: "33",
-        includes: { name: "f2", text: "function f2(): void" },
+        includes: {
+            name: "f2",
+            text: "function f2(): void",
+            sortText: completion.SortText.CurrentFileScope
+        },
         excludes: ["n2", "I2"],
     },
 );

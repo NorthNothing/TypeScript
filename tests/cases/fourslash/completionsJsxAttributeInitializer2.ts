@@ -15,7 +15,14 @@
 verify.completions(
     {
         marker: "0",
-        includes: { name: "foo", text: "const foo: 0", kind: "const", insertText: "{foo}", replacementSpan: test.ranges()[0] },
+        includes: {
+            name: "foo",
+            text: "const foo: 0",
+            kind: "const",
+            insertText: "{foo}",
+            replacementSpan: test.ranges()[0],
+            sortText: completion.SortText.CurrentFileScope
+        },
         preferences: { includeInsertTextCompletions: true },
     },
     { marker: ["1", "2"], exact: "b" },

@@ -34,6 +34,7 @@ function recommended(marker: string, { insertText, isNewIdentifierLocation = tru
             kind: "enum",
             isRecommended: true,
             insertText,
+            sortText: completion.SortText.CurrentFileScope
         },
         isNewIdentifierLocation,
         preferences: {

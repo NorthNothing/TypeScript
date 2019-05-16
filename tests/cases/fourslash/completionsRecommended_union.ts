@@ -10,13 +10,27 @@
 verify.completions(
     {
         marker: "a",
-        includes: { name: "E", isRecommended: true },
+        includes: {
+            name: "E",
+            isRecommended: true,
+            sortText: completion.SortText.CurrentFileScope
+        },
         isNewIdentifierLocation: true,
     },
     {
         marker: "b",
         // Arbitrarily chooses one to be recommended
-        includes: [{ name: "E", isRecommended: true, }, { name: "E2" }],
+        includes: [
+            {
+                name: "E",
+                isRecommended: true,
+                sortText: completion.SortText.CurrentFileScope
+            },
+            {
+                name: "E2",
+                sortText: completion.SortText.CurrentFileScope
+            }
+        ],
         isNewIdentifierLocation: true,
     },
 );

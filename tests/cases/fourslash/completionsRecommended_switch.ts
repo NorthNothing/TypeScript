@@ -9,5 +9,11 @@
 
 verify.completions({
     marker: test.markers(),
-    includes: { name: "Enu", text: "enum Enu", kind: "enum", isRecommended: true },
+    includes: {
+        name: "Enu",
+        text: "enum Enu",
+        kind: "enum",
+        isRecommended: true,
+        sortText: completion.SortText.CurrentFileScope
+    },
 });

@@ -20,6 +20,7 @@ const cls = (ctr: boolean): FourSlashInterface.ExpectedCompletionEntry => ({
     text: ctr ? "constructor Cls(): Cls" : "class Cls",
     kind: "class",
     isRecommended: true,
+    sortText: completion.SortText.CurrentFileScope
 });
 
 // Not recommended, because it's an abstract class
@@ -28,12 +29,19 @@ const abs = (ctr: boolean): FourSlashInterface.ExpectedCompletionEntry => ({
     text: ctr ? "constructor Abs(): Abs" : "class Abs",
     kind: "class",
     kindModifiers: "abstract",
+    sortText: completion.SortText.CurrentFileScope
 });
 
 verify.completions(
     {
         marker: ["e0", "e1", "let0", "let1"],
-        includes: { name: "Enu", text: "enum Enu", kind: "enum", isRecommended: true },
+        includes: {
+            name: "Enu",
+            text: "enum Enu",
+            kind: "enum",
+            isRecommended: true,
+            sortText: completion.SortText.CurrentFileScope
+        },
         isNewIdentifierLocation: true,
     },
     { marker: "c0", includes: cls(true) },

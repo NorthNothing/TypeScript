@@ -7,5 +7,11 @@
 
 verify.completions({
     marker: ["a", "b"],
-    includes: { name: "Enu", text: "enum Enu", kind: "enum", isRecommended: true },
+    includes: {
+        name: "Enu",
+        text: "enum Enu",
+        kind: "enum",
+        isRecommended: true,
+        sortText: completion.SortText.CurrentFileScope
+    },
 });

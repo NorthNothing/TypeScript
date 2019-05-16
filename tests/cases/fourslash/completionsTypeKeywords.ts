@@ -6,5 +6,9 @@
 
 verify.completions({
     marker: "",
-    exact: ["globalThis", "T", ...completion.typeKeywords],
+    exact: [
+        completion.globalThisEntry,
+        { name: "T", sortText: completion.SortText.CurrentFileScope },
+        ...completion.typeKeywords
+    ],
 });
